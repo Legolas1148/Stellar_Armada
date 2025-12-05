@@ -1,0 +1,30 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\projects\\stellar_armada\\stellar_armada\\source\\stellar_armada\\variant_twinstick\\gameplay\\twinstickaoeattack.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\projects\\stellar_armada\\stellar_armada\\intermediate\\build\\win64\\x64\\stellar_armadaeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\projects\\stellar_armada\\stellar_armada\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\stellar_armada\\definitions.stellar_armada.h",
+            "c:\\projects\\stellar_armada\\stellar_armada\\source\\stellar_armada\\variant_twinstick\\gameplay\\twinstickaoeattack.h",
+            "c:\\projects\\stellar_armada\\stellar_armada\\intermediate\\build\\win64\\unrealeditor\\inc\\stellar_armada\\uht\\twinstickaoeattack.generated.h",
+            "c:\\games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\components\\spherecomponent.h",
+            "c:\\games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "c:\\games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "c:\\games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\spherecomponent.generated.h",
+            "c:\\projects\\stellar_armada\\stellar_armada\\source\\stellar_armada\\variant_twinstick\\ai\\twinsticknpc.h",
+            "c:\\games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
+            "c:\\games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
+            "c:\\games\\ue_5.6\\engine\\source\\runtime\\net\\core\\public\\net\\core\\nettoken\\nettokenexportcontext.h",
+            "c:\\games\\ue_5.6\\engine\\source\\runtime\\experimental\\iris\\core\\public\\iris\\serialization\\irisobjectreferencepackagemap.h",
+            "c:\\games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\iriscore\\uht\\irisobjectreferencepackagemap.generated.h",
+            "c:\\games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementreplication.generated.h",
+            "c:\\games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
+            "c:\\games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
+            "c:\\games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
+            "c:\\projects\\stellar_armada\\stellar_armada\\intermediate\\build\\win64\\unrealeditor\\inc\\stellar_armada\\uht\\twinsticknpc.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Stellar_Armada.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Stellar_Armada.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\Stellar_ArmadaEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Stellar_Armada">
+      <UniqueIdentifier>{87584BB6-F150-3F9E-A788-0E72234AE196}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Stellar_Armada\SA_PlayerController.cpp">
+      <Filter>Source\Stellar_Armada</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\SA_PlayerController.h">
+      <Filter>Source\Stellar_Armada</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\Stellar_Armada\Stellar_Armada.Build.cs">
+      <Filter>Source\Stellar_Armada</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Stellar_Armada.cpp">
+      <Filter>Source\Stellar_Armada</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Stellar_Armada.h">
+      <Filter>Source\Stellar_Armada</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Stellar_ArmadaCharacter.cpp">
+      <Filter>Source\Stellar_Armada</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Stellar_ArmadaCharacter.h">
+      <Filter>Source\Stellar_Armada</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Stellar_ArmadaGameMode.cpp">
+      <Filter>Source\Stellar_Armada</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Stellar_ArmadaGameMode.h">
+      <Filter>Source\Stellar_Armada</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Stellar_ArmadaPlayerController.cpp">
+      <Filter>Source\Stellar_Armada</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Stellar_ArmadaPlayerController.h">
+      <Filter>Source\Stellar_Armada</Filter>
+    </ClInclude>
+    <Filter Include="Source\Stellar_Armada\Variant_Strategy">
+      <UniqueIdentifier>{4D3C88DC-8C86-38E5-A163-2CEB41E2C518}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_Strategy\StrategyGameMode.cpp">
+      <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_Strategy\StrategyGameMode.h">
+      <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_Strategy\StrategyPawn.cpp">
+      <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_Strategy\StrategyPawn.h">
+      <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_Strategy\StrategyPlayerController.cpp">
+      <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_Strategy\StrategyPlayerController.h">
+      <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_Strategy\StrategyUnit.cpp">
+      <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_Strategy\StrategyUnit.h">
+      <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
+    </ClInclude>
+    <Filter Include="Source\Stellar_Armada\Variant_Strategy\UI">
+      <UniqueIdentifier>{1CEF0620-54B6-3D25-B732-9B23B6A803CB}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_Strategy\UI\StrategyHUD.cpp">
+      <Filter>Source\Stellar_Armada\Variant_Strategy\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_Strategy\UI\StrategyHUD.h">
+      <Filter>Source\Stellar_Armada\Variant_Strategy\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_Strategy\UI\StrategyUI.cpp">
+      <Filter>Source\Stellar_Armada\Variant_Strategy\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_Strategy\UI\StrategyUI.h">
+      <Filter>Source\Stellar_Armada\Variant_Strategy\UI</Filter>
+    </ClInclude>
+    <Filter Include="Source\Stellar_Armada\Variant_TwinStick">
+      <UniqueIdentifier>{F9C33956-4FC0-3602-ABCA-A85FA4D38E70}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_TwinStick\TwinStickCharacter.cpp">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_TwinStick\TwinStickCharacter.h">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_TwinStick\TwinStickGameMode.cpp">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_TwinStick\TwinStickGameMode.h">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_TwinStick\TwinStickPlayerController.cpp">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_TwinStick\TwinStickPlayerController.h">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick</Filter>
+    </ClInclude>
+    <Filter Include="Source\Stellar_Armada\Variant_TwinStick\AI">
+      <UniqueIdentifier>{7A61E602-9C38-3235-910F-CA7800E400C4}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_TwinStick\AI\TwinStickAIController.cpp">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_TwinStick\AI\TwinStickAIController.h">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_TwinStick\AI\TwinStickNPC.cpp">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_TwinStick\AI\TwinStickNPC.h">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_TwinStick\AI\TwinStickNPCDestruction.cpp">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_TwinStick\AI\TwinStickNPCDestruction.h">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_TwinStick\AI\TwinStickSpawner.cpp">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_TwinStick\AI\TwinStickSpawner.h">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_TwinStick\AI\TwinStickStateTreeUtility.cpp">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_TwinStick\AI\TwinStickStateTreeUtility.h">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\AI</Filter>
+    </ClInclude>
+    <Filter Include="Source\Stellar_Armada\Variant_TwinStick\Gameplay">
+      <UniqueIdentifier>{8A0F6FDD-55F2-3033-BB6B-CF44DF176091}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_TwinStick\Gameplay\TwinStickAoEAttack.cpp">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\Gameplay</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_TwinStick\Gameplay\TwinStickAoEAttack.h">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\Gameplay</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_TwinStick\Gameplay\TwinStickPickup.cpp">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\Gameplay</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_TwinStick\Gameplay\TwinStickPickup.h">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\Gameplay</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_TwinStick\Gameplay\TwinStickProjectile.cpp">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\Gameplay</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_TwinStick\Gameplay\TwinStickProjectile.h">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\Gameplay</Filter>
+    </ClInclude>
+    <Filter Include="Source\Stellar_Armada\Variant_TwinStick\UI">
+      <UniqueIdentifier>{D850177B-CBC4-310E-A663-4B305E6835F4}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_TwinStick\UI\TwinStickUI.cpp">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_TwinStick\UI\TwinStickUI.h">
+      <Filter>Source\Stellar_Armada\Variant_TwinStick\UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

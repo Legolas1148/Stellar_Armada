@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Stellar_Armada",
+			"Path": "..\\Source\\Stellar_Armada.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "Stellar_ArmadaEditor",
+			"Path": "..\\Source\\Stellar_ArmadaEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

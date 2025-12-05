@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\projects\\stellar_armada\\stellar_armada\\source\\stellar_armada\\variant_strategy\\strategygamemode.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\projects\\stellar_armada\\stellar_armada\\intermediate\\build\\win64\\x64\\stellar_armadaeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\projects\\stellar_armada\\stellar_armada\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\stellar_armada\\definitions.stellar_armada.h",
+            "c:\\projects\\stellar_armada\\stellar_armada\\source\\stellar_armada\\variant_strategy\\strategygamemode.h",
+            "c:\\games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "c:\\games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "c:\\games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "c:\\games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "c:\\projects\\stellar_armada\\stellar_armada\\intermediate\\build\\win64\\unrealeditor\\inc\\stellar_armada\\uht\\strategygamemode.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

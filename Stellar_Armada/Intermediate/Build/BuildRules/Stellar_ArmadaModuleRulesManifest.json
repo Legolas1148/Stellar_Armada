@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Projects\\Stellar_Armada\\Stellar_Armada\\Source\\Stellar_Armada\\Stellar_Armada.Build.cs",
+		"C:\\Projects\\Stellar_Armada\\Stellar_Armada\\Source\\Stellar_Armada.Target.cs",
+		"C:\\Projects\\Stellar_Armada\\Stellar_Armada\\Source\\Stellar_ArmadaEditor.Target.cs"
+	],
+	"EngineVersion": "5.6.1"
+}
