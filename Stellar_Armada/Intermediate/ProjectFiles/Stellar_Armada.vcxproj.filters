@@ -39,6 +39,12 @@
     <ClInclude Include="..\..\Source\Stellar_Armada\SA_PlayerController.h">
       <Filter>Source\Stellar_Armada</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\SA_ShipUnit.cpp">
+      <Filter>Source\Stellar_Armada</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\SA_ShipUnit.h">
+      <Filter>Source\Stellar_Armada</Filter>
+    </ClInclude>
     <None Include="..\..\Source\Stellar_Armada\Stellar_Armada.Build.cs">
       <Filter>Source\Stellar_Armada</Filter>
     </None>
@@ -87,10 +93,22 @@
     <ClInclude Include="..\..\Source\Stellar_Armada\Variant_Strategy\StrategyPlayerController.h">
       <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_Strategy\StrategyTurnManager.cpp">
+      <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_Strategy\StrategyTurnManager.h">
+      <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Stellar_Armada\Variant_Strategy\StrategyUnit.cpp">
       <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Stellar_Armada\Variant_Strategy\StrategyUnit.h">
+      <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_Strategy\TurnManager.cpp">
+      <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_Strategy\TurnManager.h">
       <Filter>Source\Stellar_Armada\Variant_Strategy</Filter>
     </ClInclude>
     <Filter Include="Source\Stellar_Armada\Variant_Strategy\UI">
@@ -106,6 +124,12 @@
       <Filter>Source\Stellar_Armada\Variant_Strategy\UI</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Stellar_Armada\Variant_Strategy\UI\StrategyUI.h">
+      <Filter>Source\Stellar_Armada\Variant_Strategy\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Stellar_Armada\Variant_Strategy\UI\WBP_SA_HUD.cpp">
+      <Filter>Source\Stellar_Armada\Variant_Strategy\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Stellar_Armada\Variant_Strategy\UI\WBP_SA_HUD.h">
       <Filter>Source\Stellar_Armada\Variant_Strategy\UI</Filter>
     </ClInclude>
     <Filter Include="Source\Stellar_Armada\Variant_TwinStick">

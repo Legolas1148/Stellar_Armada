@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stellar_ArmadaModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ef3ada5c33305454805a054f4a801352114010c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+361ae5ccbcd03c7d451d0d4697fead6d83a2ecbb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stellar_ArmadaModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stellar_ArmadaModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
