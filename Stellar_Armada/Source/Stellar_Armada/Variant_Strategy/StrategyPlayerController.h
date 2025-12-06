@@ -13,6 +13,7 @@ struct FInputActionValue;
 class AStrategyHUD;
 class AStrategyNPC;
 class UInputAction;
+class UWBP_SA_HUD;
 
 /** Enum to determine the last used input type */
 UENUM(BlueprintType)
@@ -37,8 +38,11 @@ protected:
 	/** Strategy Pawn associated with this controller */
 	TObjectPtr<AStrategyPawn> ControlledPawn;
 
-	/** Strategy HUD associated with this controller */
-	TObjectPtr<AStrategyHUD> StrategyHUD;
+        /** Strategy HUD associated with this controller */
+        TObjectPtr<AStrategyHUD> StrategyHUD;
+
+        /** Strategy turn widget associated with this controller */
+        TObjectPtr<UWBP_SA_HUD> StrategyTurnWidget;
 
 	/** Determines the chosen input type */
 	UPROPERTY(EditAnywhere, Category="Input")
@@ -58,8 +62,16 @@ protected:
 	/** If true, double-tap touch select all mode is active */
 	bool bDoubleTapActive = false;
 
-	/** If true, allow the player to interact with game objects */
-	bool bAllowInteraction = true;
+        /** If true, allow the player to interact with game objects */
+        bool bAllowInteraction = true;
+
+        /** Turn manager blueprint class to search for on level load */
+        UPROPERTY(EditDefaultsOnly, Category="Turn")
+        TSubclassOf<AActor> TurnManagerClass;
+
+        /** UI class used for the strategy turn widget */
+        UPROPERTY(EditDefaultsOnly, Category="Turn")
+        TSubclassOf<UWBP_SA_HUD> TurnWidgetClass;
 
 	/** Input Action for moving the camera */
 	UPROPERTY(EditAnywhere, Category="Input")
@@ -172,19 +184,22 @@ protected:
 
 public:
 
-	/** Constructor */
-	AStrategyPlayerController();
+        /** Constructor */
+        AStrategyPlayerController();
 
-	/** Initialize input bindings */
-	virtual void SetupInputComponent() override;
+        /** Initialize input bindings */
+        virtual void SetupInputComponent() override;
+
+        /** Initialize UI and references */
+        virtual void BeginPlay() override;
 
 	/** Pawn initialization */
 	virtual void OnPossess(APawn* InPawn);
 
 public:
 
-	/** Updates selected units from the HUD's drag select box */
-	void DragSelectUnits(const TArray<AStrategyUnit*>& Units);
+        /** Updates selected units from the HUD's drag select box */
+        void DragSelectUnits(const TArray<AStrategyUnit*>& Units);
 
 	/** Passes the list of selected units */
 	const TArray<AStrategyUnit*>& GetSelectedUnits();
@@ -273,11 +288,17 @@ protected:
 	/** Calculates and returns the current mouse location */
 	FVector2D GetMouseLocation();
 
-	/** Attempts to get the world location under the cursor, returns true if successful */
-	bool GetLocationUnderCursor(FVector& Location);
+        /** Attempts to get the world location under the cursor, returns true if successful */
+        bool GetLocationUnderCursor(FVector& Location);
 
-	/** Projects the current touch location into world space */
-	FVector ProjectTouchPointToWorldSpace();
+        /** Projects the current touch location into world space */
+        FVector ProjectTouchPointToWorldSpace();
+
+        /** Sets up the turn UI widget and connects it to the turn manager */
+        void InitializeTurnUI();
+
+        /** Locates the placed turn manager actor in the world */
+        AActor* ResolveTurnManager() const;
 
 	/** Spawns the positive cursor effect */
 	UFUNCTION(BlueprintImplementableEvent, Category="Cursor", meta = (DisplayName="Cursor Feedback"))
