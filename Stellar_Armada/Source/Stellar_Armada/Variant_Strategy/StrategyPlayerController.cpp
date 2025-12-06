@@ -8,7 +8,6 @@
 #include "InputMappingContext.h"
 #include "Camera/CameraComponent.h"
 #include "StrategyPawn.h"
-#include "Camera/CameraComponent.h"
 #include "InputActionValue.h"
 #include "StrategyHUD.h"
 #include "Engine/CollisionProfile.h"
@@ -107,6 +106,35 @@ if (TouchDoubleTap.Succeeded())
 {
 TouchDoubleTapAction = TouchDoubleTap.Object;
 }
+#include "EngineUtils.h"
+#include "UObject/ConstructorHelpers.h"
+#include "Variant_Strategy/UI/WBP_SA_HUD.h"
+
+AStrategyPlayerController::AStrategyPlayerController()
+{
+	// mouse cursor should always be shown
+	bShowMouseCursor = true;
+
+	TurnWidgetClass = UWBP_SA_HUD::StaticClass();
+
+	static ConstructorHelpers::FClassFinder<UWBP_SA_HUD> TurnWidgetBP(TEXT("/Game/StellarArmada/Blueprints/WBP_SA_HUD"));
+	if (TurnWidgetBP.Succeeded())
+	{
+		TurnWidgetClass = TurnWidgetBP.Class;
+	}
+
+	static ConstructorHelpers::FClassFinder<AActor> TurnManagerBP(TEXT("/Game/StellarArmada/Blueprints/BP_SA_TurnManager"));
+	if (TurnManagerBP.Succeeded())
+	{
+		TurnManagerClass = TurnManagerBP.Class;
+	}
+}
+
+void AStrategyPlayerController::BeginPlay()
+{
+Super::BeginPlay();
+
+InitializeTurnUI();
 }
 
 void AStrategyPlayerController::SetupInputComponent()
@@ -747,7 +775,47 @@ AStrategyUnit* AStrategyPlayerController::GetClosestSelectedUnitToLocation(FVect
 	}
 
 	// return the selected unit
-	return OutUnit;
+        return OutUnit;
+
+}
+
+AActor* AStrategyPlayerController::ResolveTurnManager() const
+{
+	if (UWorld* World = GetWorld())
+	{
+		if (TurnManagerClass != nullptr)
+		{
+			for (TActorIterator<AActor> It(World, TurnManagerClass); It; ++It)
+			{
+				return *It;
+			}
+		}
+
+		for (TActorIterator<AActor> It(World); It; ++It)
+		{
+			if (It->GetName().Contains(TEXT("TurnManager")))
+			{
+				return *It;
+			}
+		}
+	}
+
+	return nullptr;
+}
+
+void AStrategyPlayerController::InitializeTurnUI()
+{
+	if (TurnWidgetClass == nullptr)
+	{
+		return;
+	}
+
+	StrategyTurnWidget = CreateWidget<UWBP_SA_HUD>(this, TurnWidgetClass);
+	if (StrategyTurnWidget != nullptr)
+	{
+		StrategyTurnWidget->SetTurnManager(ResolveTurnManager());
+		StrategyTurnWidget->AddToViewport(0);
+	}
 }
 
 FVector2D AStrategyPlayerController::GetMouseLocation()

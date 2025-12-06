@@ -33,6 +33,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|x64'">
     <LocalDebuggerCommandArguments>"$(SolutionDir)Stellar_Armada.uproject" -skipcompile</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArgumentsHistory>"C:\Projects\Stellar_Armada\Stellar_Armada\Stellar_Armada.uproject" -skipcompile|</LocalDebuggerCommandArgumentsHistory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|arm64'">
     <RemoteDebuggerCommandArguments>"$(SolutionDir)Stellar_Armada.uproject" -skipcompile</RemoteDebuggerCommandArguments>

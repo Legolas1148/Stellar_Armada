@@ -10,7 +10,13 @@
 
 AStrategyUnit::AStrategyUnit()
 {
-	PrimaryActorTick.bCanEverTick = true;
+        PrimaryActorTick.bCanEverTick = true;
+
+        Team = 0;
+        AttackRange = 500.0f;
+        Damage = 10.0f;
+        Health = 100.0f;
+        bHasActedThisTurn = false;
 
 	// ensure this unit has a valid AI controller to handle move requests
 	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
@@ -141,6 +147,43 @@ bool AStrategyUnit::MoveToLocation(const FVector& Location, float AcceptanceRadi
 
 void AStrategyUnit::OnMoveFinished(FAIRequestID RequestID, const FPathFollowingResult& Result)
 {
-	// call the delegate
-	OnMoveCompleted.Broadcast(this);
+        // call the delegate
+        OnMoveCompleted.Broadcast(this);
+}
+
+void AStrategyUnit::AttackTarget(AStrategyUnit* TargetShip)
+{
+        // validate target
+        if (!IsValid(TargetShip) || TargetShip == this)
+        {
+                return;
+        }
+
+        // prevent friendly fire
+        if (TargetShip->Team == Team)
+        {
+                return;
+        }
+
+        // ensure target is within attack range
+        const float DistanceToTarget = FVector::Dist(GetActorLocation(), TargetShip->GetActorLocation());
+        if (DistanceToTarget > AttackRange)
+        {
+                return;
+        }
+
+        // apply damage
+        TargetShip->Health -= Damage;
+
+        // notify listeners of health change
+        TargetShip->OnHealthChanged.Broadcast(TargetShip, TargetShip->Health);
+
+        // destroy the target if its health is depleted
+        if (TargetShip->Health <= 0.0f)
+        {
+                TargetShip->Destroy();
+        }
+
+        // mark that this unit has performed its action this turn
+        bHasActedThisTurn = true;
 }
