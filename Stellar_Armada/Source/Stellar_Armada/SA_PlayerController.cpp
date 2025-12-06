@@ -65,31 +65,6 @@ void ASA_PlayerController::HandleLeftClick()
                 SelectedShip = ClickedShip && !ClickedShip->IsEnemyShip() ? ClickedShip : nullptr;
                 BP_OnSelected(SelectedActor);
         }
-	);
-
-	if (!bHit)
-	{
-		if (SelectedActor)
-		{
-			BP_OnDeselected(SelectedActor);
-			SelectedActor = nullptr;
-		}
-		return;
-	}
-
-	AActor* HitActor = Hit.GetActor();
-
-	// Very simple selection logic (refine later)
-	if (HitActor)
-	{
-		if (SelectedActor && SelectedActor != HitActor)
-		{
-			BP_OnDeselected(SelectedActor);
-		}
-
-                SelectedActor = HitActor;
-                BP_OnSelected(SelectedActor);
-        }
 }
 
 bool ASA_PlayerController::IsPlayerTurnActive() const
