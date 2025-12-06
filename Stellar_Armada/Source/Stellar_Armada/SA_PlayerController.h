@@ -16,9 +16,6 @@ public:
         virtual void SetupInputComponent() override;
 
 protected:
-        UPROPERTY(BlueprintReadOnly, Category = "Stellar Armada|Selection")
-        TObjectPtr<AActor> SelectedActor;
-
         /** Currently selected player-controlled ship. */
         UPROPERTY(BlueprintReadWrite, Category = "Stellar Armada|Selection")
         TObjectPtr<ASA_ShipUnit> SelectedShip = nullptr;
