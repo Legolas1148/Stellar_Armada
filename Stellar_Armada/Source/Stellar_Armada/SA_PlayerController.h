@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "SA_ShipUnit.h"
 #include "SA_PlayerController.generated.h"
 
 UCLASS()
@@ -13,8 +14,16 @@ public:
 	virtual void SetupInputComponent() override;
 
 protected:
-	UPROPERTY(BlueprintReadOnly, Category = "Stellar Armada|Selection")
-	TObjectPtr<AActor> SelectedActor;
+        UPROPERTY(BlueprintReadOnly, Category = "Stellar Armada|Selection")
+        TObjectPtr<AActor> SelectedActor;
+
+        /** Currently selected player-controlled ship. */
+        UPROPERTY(BlueprintReadWrite, Category = "Stellar Armada|Selection")
+        TObjectPtr<ASA_ShipUnit> SelectedShip = nullptr;
+
+        /** Current turn state used to gate attack interactions. */
+        UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stellar Armada|Turn")
+        ESA_TurnState TurnState = ESA_TurnState::PlayerTurn;
 
 	UFUNCTION()
 	void HandleLeftClick();
