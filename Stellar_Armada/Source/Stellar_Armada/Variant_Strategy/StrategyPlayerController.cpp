@@ -16,11 +16,97 @@
 #include "StrategyUnit.h"
 #include "NavigationSystem.h"
 #include "Engine/OverlapResult.h"
+#include "UObject/ConstructorHelpers.h"
 
 AStrategyPlayerController::AStrategyPlayerController()
 {
-	// mouse cursor should always be shown
-	bShowMouseCursor = true;
+// mouse cursor should always be shown
+bShowMouseCursor = true;
+
+// set up default input assets so the controller works without manual assignment
+static ConstructorHelpers::FObjectFinder<UInputMappingContext> MouseContext(TEXT("/Game/Variant_Strategy/Input/IMC_Strategy_Mouse.IMC_Strategy_Mouse"));
+if (MouseContext.Succeeded())
+{
+MouseMappingContext = MouseContext.Object;
+}
+
+static ConstructorHelpers::FObjectFinder<UInputMappingContext> TouchContext(TEXT("/Game/Variant_Strategy/Input/IMC_Strategy_Touch.IMC_Strategy_Touch"));
+if (TouchContext.Succeeded())
+{
+TouchMappingContext = TouchContext.Object;
+}
+
+static ConstructorHelpers::FObjectFinder<UInputAction> MoveCamera(TEXT("/Game/Variant_Strategy/Input/Actions/IA_Strategy_MoveCamera.IA_Strategy_MoveCamera"));
+if (MoveCamera.Succeeded())
+{
+MoveCameraAction = MoveCamera.Object;
+}
+
+static ConstructorHelpers::FObjectFinder<UInputAction> ZoomCamera(TEXT("/Game/Variant_Strategy/Input/Actions/IA_Strategy_Zoom.IA_Strategy_Zoom"));
+if (ZoomCamera.Succeeded())
+{
+ZoomCameraAction = ZoomCamera.Object;
+}
+
+static ConstructorHelpers::FObjectFinder<UInputAction> ResetCamera(TEXT("/Game/Variant_Strategy/Input/Actions/IA_Strategy_ResetCamera.IA_Strategy_ResetCamera"));
+if (ResetCamera.Succeeded())
+{
+ResetCameraAction = ResetCamera.Object;
+}
+
+static ConstructorHelpers::FObjectFinder<UInputAction> SelectClick(TEXT("/Game/Variant_Strategy/Input/Actions/IA_Strategy_SelectClick.IA_Strategy_SelectClick"));
+if (SelectClick.Succeeded())
+{
+SelectClickAction = SelectClick.Object;
+}
+
+static ConstructorHelpers::FObjectFinder<UInputAction> SelectHold(TEXT("/Game/Variant_Strategy/Input/Actions/IA_Strategy_SelectHold.IA_Strategy_SelectHold"));
+if (SelectHold.Succeeded())
+{
+SelectHoldAction = SelectHold.Object;
+}
+
+static ConstructorHelpers::FObjectFinder<UInputAction> InteractClick(TEXT("/Game/Variant_Strategy/Input/Actions/IA_Strategy_InteractClick.IA_Strategy_InteractClick"));
+if (InteractClick.Succeeded())
+{
+InteractClickAction = InteractClick.Object;
+}
+
+static ConstructorHelpers::FObjectFinder<UInputAction> InteractHold(TEXT("/Game/Variant_Strategy/Input/Actions/IA_Strategy_InteractHold.IA_Strategy_InteractHold"));
+if (InteractHold.Succeeded())
+{
+InteractHoldAction = InteractHold.Object;
+}
+
+static ConstructorHelpers::FObjectFinder<UInputAction> SelectionModifier(TEXT("/Game/Variant_Strategy/Input/Actions/IA_Strategy_SelectionModifier.IA_Strategy_SelectionModifier"));
+if (SelectionModifier.Succeeded())
+{
+SelectionModifierAction = SelectionModifier.Object;
+}
+
+static ConstructorHelpers::FObjectFinder<UInputAction> TouchPrimaryTap(TEXT("/Game/Variant_Strategy/Input/Actions/IA_Strategy_Touch_PrimaryTap.IA_Strategy_Touch_PrimaryTap"));
+if (TouchPrimaryTap.Succeeded())
+{
+TouchPrimaryTapAction = TouchPrimaryTap.Object;
+}
+
+static ConstructorHelpers::FObjectFinder<UInputAction> TouchPrimaryHold(TEXT("/Game/Variant_Strategy/Input/Actions/IA_Strategy_Touch_PrimaryHold.IA_Strategy_Touch_PrimaryHold"));
+if (TouchPrimaryHold.Succeeded())
+{
+TouchPrimaryHoldAction = TouchPrimaryHold.Object;
+}
+
+static ConstructorHelpers::FObjectFinder<UInputAction> TouchSecondary(TEXT("/Game/Variant_Strategy/Input/Actions/IA_Strategy_Touch_Secondary.IA_Strategy_Touch_Secondary"));
+if (TouchSecondary.Succeeded())
+{
+TouchSecondaryAction = TouchSecondary.Object;
+}
+
+static ConstructorHelpers::FObjectFinder<UInputAction> TouchDoubleTap(TEXT("/Game/Variant_Strategy/Input/Actions/IA_Strategy_Touch_DoubleTap.IA_Strategy_Touch_DoubleTap"));
+if (TouchDoubleTap.Succeeded())
+{
+TouchDoubleTapAction = TouchDoubleTap.Object;
+}
 }
 
 void AStrategyPlayerController::SetupInputComponent()
