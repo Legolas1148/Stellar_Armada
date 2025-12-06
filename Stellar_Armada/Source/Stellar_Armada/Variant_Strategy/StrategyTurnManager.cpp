@@ -32,7 +32,7 @@ void AStrategyTurnManager::RegisterUnit(AStrategyUnit* Unit, bool bIsPlayerUnit)
 void AStrategyTurnManager::CheckBattleEnd()
 {
     // do not process once the battle has already ended
-    if (TurnState == ETurnState::BattleEnd)
+    if (TurnState == EStrategyTurnState::BattleEnd)
     {
         return;
     }
@@ -61,7 +61,7 @@ void AStrategyTurnManager::PruneInvalidUnits(TArray<TWeakObjectPtr<AStrategyUnit
 
 void AStrategyTurnManager::EnterBattleEnd(TSubclassOf<UUserWidget> OverlayClass)
 {
-    TurnState = ETurnState::BattleEnd;
+    TurnState = EStrategyTurnState::BattleEnd;
 
     // prevent further player input when the battle ends
     for (FConstPlayerControllerIterator It = GetWorld()->GetPlayerControllerIterator(); It; ++It)

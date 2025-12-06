@@ -8,12 +8,13 @@
 
 class AAIController;
 
+/** Turn states for the basic strategy battle loop */
 UENUM(BlueprintType)
 enum class ETurnState : uint8
 {
-        PlayerTurn,
-        EnemyTurn,
-        BattleEnded
+    PlayerTurn,
+    EnemyTurn,
+    BattleEnded
 };
 
 /**
@@ -23,84 +24,43 @@ enum class ETurnState : uint8
 UCLASS()
 class ATurnManager : public AActor
 {
-        GENERATED_BODY()
-
-public:
-        ATurnManager();
-
-        /** Begin the player's turn. Resets per-turn flags on player units. */
-        UFUNCTION(BlueprintCallable, Category = "Turn Manager")
-        void StartPlayerTurn();
-
-        /** Ends the player's turn and triggers the enemy phase. */
-        UFUNCTION(BlueprintCallable, Category = "Turn Manager")
-        void EndPlayerTurn();
-
-        /** Executes the full enemy turn sequence. */
-        UFUNCTION(BlueprintCallable, Category = "Turn Manager")
-        void RunEnemyTurn();
-
-protected:
-        /** Called after each enemy turn to determine whether the battle should continue. */
-        UFUNCTION(BlueprintImplementableEvent, Category = "Turn Manager")
-        bool CheckBattleEnd();
-
-        /** Current state of the turn loop. */
-        UPROPERTY(BlueprintReadWrite, Category = "Turn Manager")
-        ETurnState TurnState;
-
-        /** Units controlled by the player. */
-        UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Turn Manager")
-        TArray<TObjectPtr<AActor>> PlayerUnits;
-
-        /** Units controlled by the AI. */
-        UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Turn Manager")
-        TArray<TObjectPtr<AActor>> EnemyUnits;
-
-private:
-        float GetAttackRange(AActor* EnemyUnit) const;
-        void ResetPlayerUnitTurnFlags();
-        void AttackTarget(AActor* Attacker, AActor* Target) const;
-        void MoveEnemyTowardTarget(AActor* EnemyUnit, const FVector& TargetLocation) const;
-};
-
-class AStrategyUnit;
-
-/** Turn states for the battle loop */
-UENUM(BlueprintType)
-enum class ETurnState : uint8
-{
-    PlayerTurn,
-    EnemyTurn,
-    BattleEnd
-};
-
-/** Actor responsible for tracking turn order and unit lists */
-UCLASS()
-class ATurnManager : public AActor
-{
     GENERATED_BODY()
 
 public:
     ATurnManager();
 
+    /** Begin the player's turn. Resets per-turn flags on player units. */
+    UFUNCTION(BlueprintCallable, Category = "Turn Manager")
+    void StartPlayerTurn();
+
+    /** Ends the player's turn and triggers the enemy phase. */
+    UFUNCTION(BlueprintCallable, Category = "Turn Manager")
+    void EndPlayerTurn();
+
+    /** Executes the full enemy turn sequence. */
+    UFUNCTION(BlueprintCallable, Category = "Turn Manager")
+    void RunEnemyTurn();
+
 protected:
-    virtual void BeginPlay() override;
+    /** Called after each enemy turn to determine whether the battle should continue. */
+    UFUNCTION(BlueprintImplementableEvent, Category = "Turn Manager")
+    bool CheckBattleEnd();
+
+    /** Current state of the turn loop. */
+    UPROPERTY(BlueprintReadWrite, Category = "Turn Manager")
+    ETurnState TurnState;
+
+    /** Units controlled by the player. */
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Turn Manager")
+    TArray<TObjectPtr<AActor>> PlayerUnits;
+
+    /** Units controlled by the AI. */
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Turn Manager")
+    TArray<TObjectPtr<AActor>> EnemyUnits;
 
 private:
-    /** Attempts to read the Team property from the given unit. Returns INDEX_NONE if missing. */
-    int32 ResolveUnitTeam(const AStrategyUnit* Unit) const;
-
-public:
-    /** Current state of the turn sequence */
-    UPROPERTY(BlueprintReadOnly, Category = "Turn Manager")
-    ETurnState TurnState = ETurnState::PlayerTurn;
-
-    /** All player-controlled units */
-    UPROPERTY(BlueprintReadOnly, Category = "Turn Manager")
-    TArray<AStrategyUnit*> PlayerUnits;
-
-    /** All enemy units */
-    UPROPERTY(BlueprintReadOnly, Category = "Turn Manager")
-    TArray<AStrategyUnit*> EnemyUnits;
+    float GetAttackRange(AActor* EnemyUnit) const;
+    void ResetPlayerUnitTurnFlags();
+    void AttackTarget(AActor* Attacker, AActor* Target) const;
+    void MoveEnemyTowardTarget(AActor* EnemyUnit, const FVector& TargetLocation) const;
 };

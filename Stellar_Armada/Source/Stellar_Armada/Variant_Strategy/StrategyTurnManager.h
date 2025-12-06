@@ -11,7 +11,7 @@ class UUserWidget;
 
 /** Simple turn states for the strategy prototype */
 UENUM(BlueprintType)
-enum class ETurnState : uint8
+enum class EStrategyTurnState : uint8
 {
     PlayerTurn    UMETA(DisplayName = "Player Turn"),
     EnemyTurn     UMETA(DisplayName = "Enemy Turn"),
@@ -34,7 +34,7 @@ public:
 protected:
     /** Current turn state of the battle */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Turns")
-    ETurnState TurnState = ETurnState::PlayerTurn;
+    EStrategyTurnState TurnState = EStrategyTurnState::PlayerTurn;
 
     /** Units controlled by the player */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Turns")
